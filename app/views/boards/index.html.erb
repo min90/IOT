@@ -1,0 +1,31 @@
+<% content_for :title, "My Boards" %>
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="display-4" style="text-align:center;">My Boards</h1>
+        <br/>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Board ID</th>
+                    <th>Remembered</th>
+                    <th>Updated at</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% user_boards.each_with_index do |board, index| %>
+                <tr>
+                    <th scope="row"><%= index + 1 %></th>
+                    <td><%= link_to board.name, board_path(board) %></td>
+                    <td><%= board.uuid %></td>
+                    <td><%= board.remembered? %></td>
+                    <td><%= board.updated_at.strftime("%e/%m/%y - %H:%M:%S") %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+
+    </div>
+</div>

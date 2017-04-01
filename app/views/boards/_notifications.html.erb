@@ -1,0 +1,24 @@
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Notified at</th>
+                <th>Remembered</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @notifications.each_with_index do |notif, index| %>
+            <tr id="notifi-<%= notif.id %>">
+                <td><%= notif.created_at.strftime("%e/%m/%y - %H:%M:%S") %></td>
+                <td><%= notif.remembered? %></td>
+                <td>
+                    <%= link_to notification_path(notif),
+                    method: :delete, data: { confirm: "Er du sikker på du vil slette denne fejl meddelelse?" },
+                    class: "btn btn-outline-danger btn-sm", remote: true do %>
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    <% end %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

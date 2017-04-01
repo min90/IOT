@@ -1,0 +1,10 @@
+<% content_for :title, "Board '#{@board.name}'" %>
+
+<div class="card">
+    <div class="card-block">
+        <h4 class="card-title">Board name:
+            <%= @board.name %></h4>
+        <h6 class="card-subtitle mb-2 text-muted">Board ID:
+            <%= @board.uuid %></h6>
+        <%= render partial: 'notifications', local: {notifications: @notifications} %>
+</div>
