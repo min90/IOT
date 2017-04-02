@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
 
 
-  namespace :api, :defaults => { :format => :json} do
+  namespace :api, :defaults => { :format => :json } do
     as :user do
         post 'sign_in' => 'sessions#create'
         delete 'sign_out' => 'sessions#destroy'
