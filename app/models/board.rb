@@ -3,7 +3,7 @@ class Board < ApplicationRecord
   has_many :notifications
 
   def hash
-    {"board": { name: name, remembered: remembered, user_id: user_id}}
+    {"board": { name: name, uuid: uuid, remembered: remembered, user_id: user_id}}
   end
 
   def remembered?
