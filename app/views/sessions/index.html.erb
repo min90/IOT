@@ -18,9 +18,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% user_boards.each do |board| %>
+                        <% user_boards.each_with_index do |board, index| %>
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row"><%= index + 1 %></th>
                             <td><%= link_to board.name, board_path(board), style: 'color:black' %></td>
                             <td><%= board.uuid %></td>
                             <td><%= board.remembered? %></td>
