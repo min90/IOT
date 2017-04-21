@@ -12,4 +12,10 @@ class Board < ApplicationRecord
     notification.tag ? "Yes" : "No"
   end
 
+  def color_status?
+    notification = notifications.where(board_id: self.id).order(created_at: :desc).first
+    return '#f44242' if notification.nil?
+    notification.tag ? "#41f49d" : "#f44242"
+  end
+
 end

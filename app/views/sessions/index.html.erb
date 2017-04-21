@@ -23,7 +23,7 @@
                             <th scope="row"><%= index + 1 %></th>
                             <td><%= link_to board.name, board_path(board), style: 'color:black' %></td>
                             <td><%= board.uuid %></td>
-                            <td><%= board.remembered? %></td>
+                            <td><div id="status" style="background-color:<%= board.color_status? %>"></td>
                             <td><%= board.updated_at.strftime("%e/%m/%y - %H:%M:%S") %></td>
                         </tr>
                         <% end %>
