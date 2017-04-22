@@ -9,8 +9,12 @@ class BoardsController < ApplicationController
     @notifications = @board.notifications
   end
 
+  def edit
+  end
+
 
   private
+
   def user_boards
     @boards = Board.where(user_id: current_user.id)
   end
