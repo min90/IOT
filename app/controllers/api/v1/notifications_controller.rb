@@ -27,6 +27,7 @@ class Api::V1::NotificationsController < Api::BaseController
     board.id
   end
 
+  private
 
   def permitted_params
     params.require(:notification).permit(:uuid)
