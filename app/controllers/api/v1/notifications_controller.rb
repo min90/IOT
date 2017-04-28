@@ -23,6 +23,7 @@ class Api::V1::NotificationsController < Api::BaseController
 
   def find_matching_board(uuid)
     board = Board.where(uuid: uuid, user_id: current_user.id).first
+    return 0 if board.nil?
     board.id
   end
 
