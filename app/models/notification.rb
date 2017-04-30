@@ -2,7 +2,7 @@ class Notification < ApplicationRecord
   belongs_to :board
 
   def hash
-    {"notification": { uuid: uuid, tag: tag } }
+    {"notification": { board_id: board.uuid, tag: tag } }
   end
 
   def remembered?
